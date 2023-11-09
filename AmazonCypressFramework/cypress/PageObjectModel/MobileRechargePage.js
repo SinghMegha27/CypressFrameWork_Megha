@@ -12,6 +12,8 @@ const selectors = {
     button : {
         rechargeplan : "#POPULAR>tbody>tr:nth-child(3)>td>div>div+div>span",
         continuewithplan : "span#payButtonText",
+        allplanprice : "#POPULAR>tbody>tr>td>div>div+div>span>span>span>strong",
+        allplanbutton : "#POPULAR>tbody>tr>td>div>div+div>span",
     }
 
 }
@@ -38,8 +40,19 @@ class MobileRechargePage{
     chooseAnyPlan(){
         cy.get(selectors.button.rechargeplan).click();
     }
-    clickOnContinueButton(){
-        cy.get(selectors.button.continuewithplan).click();
+    fetchandchooseplan(plan){
+        cy.get(selectors.button.allplanprice).each(($el, index, $array)=>{
+            if($el.text().includes(plan)){
+                cy.get(selectors.button.allplanbutton).eq(index).click();
+            }
+        })
+    }
+    clickOnContinueButton(plan){
+        cy.get(selectors.button.continuewithplan).then((value)=>{
+            if(value.text().includes(plan)){
+                cy.get(selectors.button.continuewithplan).click();
+            }
+        })
     }
     
 }

@@ -21,8 +21,8 @@ describe("Verify Mobile Recharge", () => {
             mobilerechargep.enterMobileNumber(data.mobileNumber);
             mobilerechargep.verifyOperatorNotNull();
             mobilerechargep.clickonViewPlan();
-            mobilerechargep.chooseAnyPlan();
-            mobilerechargep.clickOnContinueButton();
+            mobilerechargep.fetchandchooseplan(data.planprice);
+            mobilerechargep.clickOnContinueButton(data.planprice);
             paymentmethodp.verifyPaymentMethodTextDisplayed("Select a payment method");
         })
 
