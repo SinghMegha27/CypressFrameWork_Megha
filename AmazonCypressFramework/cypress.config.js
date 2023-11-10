@@ -9,5 +9,5 @@ module.exports = defineConfig({
     },
   },
   video: true,
-  retries: 2,
+  // retries: 2,
 });
