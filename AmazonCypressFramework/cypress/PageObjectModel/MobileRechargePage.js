@@ -1,19 +1,19 @@
 const selectors = {
     label : {
-        mobilerechargetext : "div#categoryTitleBox>h2",
+        mobilerechargetext : "#categoryTitleBox>h2",
     },
     input : {
-        mobile : "input#mobileNumberTextInputId",
-        operator : "input#operatorAndCircleTextInputId",
+        mobile : "#mobileNumberTextInputId",
+        operator : "#operatorAndCircleTextInputId",
     },
     link : {
-        viewplan : "input#amountTextInputId",
+        viewplan : "#amountTextInputId",
     },
     button : {
         rechargeplan : "#POPULAR>tbody>tr:nth-child(3)>td>div>div+div>span",
-        continuewithplan : "span#payButtonText",
+        continuewithplan : "#payButtonText",
         allplanprice : "#POPULAR>tbody>tr>td>div>div+div>span>span>span>strong",
-        allplanbutton : "#POPULAR>tbody>tr>td>div>div+div>span",
+        allplanbutton : "#POPULAR>tbody>tr>td>div>div+div>span>span>input",
     }
 
 }
@@ -53,6 +53,7 @@ class MobileRechargePage{
                 cy.get(selectors.button.continuewithplan).click();
             }
         })
+        // cy.get(selectors.button.continuewithplan).click();
     }
     
 }

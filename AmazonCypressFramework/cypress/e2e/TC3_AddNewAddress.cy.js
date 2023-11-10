@@ -6,7 +6,7 @@ const homep = new HomePage();
 const youraccountp = new YourAccountPage();
 const youraddressp = new YourAddressPage();
 
-describe("Verification of adding new address ", () => {
+describe("Verification of adding new address", () => {
     beforeEach(() => {
         cy.loginToAmazon();
     });

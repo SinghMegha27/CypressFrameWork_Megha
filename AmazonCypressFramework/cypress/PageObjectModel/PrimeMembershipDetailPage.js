@@ -1,7 +1,7 @@
 const selectors = {
     label : {
-        primesubscriptionText : "p.mcx-profile__info",
-        joinnowtext : "h3.subheadline",
+        primesubscriptionText : ".mcx-profile__info",
+        joinnowtext : ".subheadline",
     },
     link : {
         joinprime : "a[href$='pc_promo_nonprime']",

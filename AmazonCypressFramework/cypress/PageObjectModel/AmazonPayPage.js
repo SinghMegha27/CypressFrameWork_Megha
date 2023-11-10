@@ -1,9 +1,9 @@
 const selectors = {
     label : {
-        amazonpayimage : "div#apay-sticker>a>img",
+        amazonpayimage : "#apay-sticker>a>img",
     },
     link : {
-        mobilerecharge : "div#MobileRecharge>span>a",
+        mobilerecharge : "#MobileRecharge>span>a",
     }
 
 }

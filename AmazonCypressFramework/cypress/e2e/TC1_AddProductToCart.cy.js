@@ -21,7 +21,7 @@ describe("Verification of adding product to cart", () => {
             homep.enterProductDetailsInSearchBox(data.productname);
             homep.clickOnSearchButton();
             homep.verifySearchResultDisplayed(data.productname);
-            homep.findAndClickOnMatchingProduct();
+            homep.findAndClickOnMatchingProduct(data.productname);
             productdetailp.verifyMatchingProduct(data.productname);
             productdetailp.clickAddToCartButton();
             productdetailp.clickOnCartButton();

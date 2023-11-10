@@ -1,10 +1,10 @@
 const selectors = {
     label : {
-        matchingProductText : "span#productTitle",
+        matchingProductText : "#productTitle",
     },
     button : {
-        addToCartButton : "input#add-to-cart-button",
-        cartButton : "div#attach-added-to-cart-message>div>div.a-col-right>div.a-spacing-top-small>form>span>span>input",
+        addToCartButton : "#add-to-cart-button:visible",
+        cartButton : "#attach-sidesheet-view-cart-button>span>input",
     }
 
 }
@@ -19,10 +19,12 @@ class ProductDetailsPage{
         )
     }
     clickAddToCartButton(){
+        cy.reload();
         let addtoCartBtn = cy.get(selectors.button.addToCartButton);
+        addtoCartBtn.scrollIntoView();
         if(addtoCartBtn.should("be.visible")){
             cy.wait(1000);
-            addtoCartBtn.click();
+            addtoCartBtn.click({force:true});
         }
         else{
             cy.log("The Product is Out of Stock");

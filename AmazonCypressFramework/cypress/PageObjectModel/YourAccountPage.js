@@ -1,9 +1,9 @@
 const selectors = {
     label : {
-        yourAccountText : "div.a-spacing-base>h1",
+        yourAccountText : ".a-spacing-base>h1",
     },
     links: {
-        yourAddress : "h2.a-text-normal",
+        yourAddress : ".a-text-normal",
     }
 
 }

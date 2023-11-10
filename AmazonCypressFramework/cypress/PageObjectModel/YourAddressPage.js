@@ -1,22 +1,22 @@
 const selectors = {
     label : {
         yourAdressText : "h1.a-spacing-medium",
-        addressSavedText : "h4.a-alert-heading",
-        fullnameaftersavingaddress : "span#address-ui-widgets-FullName",
-        phonenumberaftersavingaddress : "span#address-ui-widgets-PhoneNumber",
+        addressSavedText : ".a-alert-heading",
+        fullnameaftersavingaddress : "#address-ui-widgets-FullName",
+        phonenumberaftersavingaddress : "#address-ui-widgets-PhoneNumber",
     },
     button : {
-        addAddress : "h2.a-color-tertiary",
-        submitbutton : "span#address-ui-widgets-form-submit-button>span>input.a-button-input",
+        addAddress : ".a-color-tertiary",
+        submitbutton : "#address-ui-widgets-form-submit-button>span>input.a-button-input",
     },
     input : {
-        fullname : "input#address-ui-widgets-enterAddressFullName",
-        mobilenumber : "input#address-ui-widgets-enterAddressPhoneNumber",
-        pincode : "input#address-ui-widgets-enterAddressPostalCode",
-        flatnumber : "input#address-ui-widgets-enterAddressLine1",
-        streetname : "input#address-ui-widgets-enterAddressLine2",
-        landmark : "input#address-ui-widgets-landmark",
-        towncity : "input#address-ui-widgets-enterAddressCity",
+        fullname : "#address-ui-widgets-enterAddressFullName",
+        mobilenumber : "#address-ui-widgets-enterAddressPhoneNumber",
+        pincode : "#address-ui-widgets-enterAddressPostalCode",
+        flatnumber : "#address-ui-widgets-enterAddressLine1",
+        streetname : "#address-ui-widgets-enterAddressLine2",
+        landmark : "#address-ui-widgets-landmark",
+        towncity : "#address-ui-widgets-enterAddressCity",
     }
 
 }

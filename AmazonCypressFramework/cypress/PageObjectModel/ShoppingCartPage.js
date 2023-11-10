@@ -1,14 +1,14 @@
 const selectors = {
     label : {
-        shoppingCartText : "div#sc-active-cart>div>div>div>h1",
-        cartProdcuts : "span.a-truncate-full",
+        shoppingCartText : "#sc-active-cart>div>div>div>h1",
+        cartProdcuts : ".a-truncate-full",
     },
     button : {
-        addToCartButton : "input#add-to-cart-button",
-        cartButton : "div#attach-added-to-cart-message>div>div.a-col-right>div.a-spacing-top-small>form>span>span>input",
+        addToCartButton : "#add-to-cart-button",
+        cartButton : "#attach-added-to-cart-message>div>div.a-col-right>div.a-spacing-top-small>form>span>span>input",
     },
     checkbox : {
-        checkedbox : "div.sc-list-item-checkbox>label>input",
+        checkedbox : ".sc-list-item-checkbox>label>input",
     }
 
 }

@@ -1,20 +1,22 @@
 const selectors = {
     input : {
-        searchTextBox : "input#twotabsearchtextbox",
+        searchTextBox : "#twotabsearchtextbox",
     },
     button : {
-        signInButton  : "input#nav-search-submit-button",
-        languagesBox : "div#p_n_feature_three_browse-bin-title+ul>span>li>span>a>div+span",
+        signInButton  : "#nav-search-submit-button",
+        languagesBox : "#p_n_feature_three_browse-bin-title+ul>span>li>span>a>div+span",
     },
     label : {
-        searchResultText : "div.a-spacing-top-small>span.a-text-bold",
-        matchingResultText : "h2.s-line-clamp-2>a",
-        languageNameText : "div.a-color-secondary>div>span.a-color-secondary:first-of-type",
+        searchResultText : ".a-spacing-top-small>span.a-text-bold",
+        matchingResultText : ".s-line-clamp-2>a",
+        languageNameText : ".a-color-secondary>div>span.a-color-secondary:first-of-type",
+        productsearchresults : "span.a-text-normal",
     },
     link : {
-        sigin : "a#nav-link-accountList",
+        sigin : "#nav-link-accountList",
         primemembership : "a[href$='nav_AccountFlyout_prime']",
         amazonpay : "a[href$='nav_cs_apay']",
+        productlink : "h2>a.a-text-normal",
     }
 
 }
@@ -36,8 +38,12 @@ class HomePage{
             expect(actualresult).to.equal(expectedResult);
         })
     }
-    findAndClickOnMatchingProduct(){
-        cy.get(selectors.label.matchingResultText).invoke("removeAttr", "target").first().click();
+    findAndClickOnMatchingProduct(expectedResult){
+        cy.get(selectors.label.productsearchresults).each(($el, index, $list)=>{
+            if(expectedResult.includes($el.text())){
+                cy.get(selectors.link.productlink).eq(index).invoke("removeAttr", "target").click();
+            }
+        })
     }
     checkBoxElements(value){
         cy.get(selectors.button.languagesBox).each(($x, index, $list)=>{

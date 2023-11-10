@@ -1,7 +1,7 @@
 const selectors = {
     input : {
         emailTextBox : "input#ap_email",
-        passwordTestBox : "input#ap_password", 
+        passwordTestBox : "input#ap_password",
     },
     button : {
         continueButton : "input#continue",
