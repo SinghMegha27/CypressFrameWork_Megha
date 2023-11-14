@@ -8,6 +8,9 @@ describe("Join Primemembership is not a Prime Member", () => {
     beforeEach(() => {
         cy.loginToAmazon();
     });
+    afterEach(()=>{
+        cy.logoutFromAmazom();
+    });
     it("Validation of Joining PrimeMembership if not a Prime Member", () => {
         homep.clickOnSignInUsingMouseHover();
         homep.clickOnYourPrimeMembershipLink();

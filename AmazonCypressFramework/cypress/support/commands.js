@@ -43,3 +43,8 @@ Cypress.Commands.add('loginToAmazon', () => {
         signp.clickOnSignInButton();
     })
 });
+
+Cypress.Commands.add('logoutFromAmazom', () => {
+    homep.clickOnSignInUsingMouseHover();
+    homep.clickOnSignOutButton();
+});

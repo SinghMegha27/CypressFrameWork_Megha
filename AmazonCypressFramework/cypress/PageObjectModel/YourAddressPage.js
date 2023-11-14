@@ -38,27 +38,17 @@ class YourAddressPage{
             }
         })
     }
-    enterFullNameInToFullNameTextBox(name){
+    enteralladressdetails(name, number, pin, flatnum, streetname, landmark){
         cy.wait(1000);
         cy.get(selectors.input.fullname).type(name);
-    }
-    enterMobileNumberToMobileNumberTextBox(number){
         cy.wait(1000);
         cy.get(selectors.input.mobilenumber).type(number);
-    }
-    enterPinCodeToPinCodeTextBox(pin){
         cy.wait(1000);
         cy.get(selectors.input.pincode).type(pin);
-    }
-    enterFlatNumberInToFlatNumberTextBox(flatnum){
         cy.wait(1000);
         cy.get(selectors.input.flatnumber).type(flatnum);
-    }
-    enterStreetNumberIntoStreetNumberTextBox(streetname){
         cy.wait(1000);
         cy.get(selectors.input.streetname).type(streetname);
-    }
-    enterLandMarkInToLandMarkTextBox(landmark){
         cy.wait(1000);
         cy.get(selectors.input.landmark).type(landmark);
     }

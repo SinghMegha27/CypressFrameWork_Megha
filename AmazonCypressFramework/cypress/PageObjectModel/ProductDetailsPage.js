@@ -3,7 +3,7 @@ const selectors = {
         matchingProductText : "#productTitle",
     },
     button : {
-        addToCartButton : "#add-to-cart-button:visible",
+        addToCartButton : "#add-to-cart-button",
         cartButton : "#attach-sidesheet-view-cart-button>span>input",
     }
 
@@ -22,7 +22,7 @@ class ProductDetailsPage{
         cy.reload();
         let addtoCartBtn = cy.get(selectors.button.addToCartButton);
         addtoCartBtn.scrollIntoView();
-        if(addtoCartBtn.should("be.visible")){
+        if(addtoCartBtn.should("be.enabled")){
             cy.wait(1000);
             addtoCartBtn.click({force:true});
         }
