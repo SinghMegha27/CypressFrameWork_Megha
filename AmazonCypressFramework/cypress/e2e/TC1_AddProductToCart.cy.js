@@ -16,8 +16,12 @@ describe("Verification of adding product to cart", () => {
             return false; // This will prevent the test from failing
         });
     });
+    afterEach(()=>{
+        cy.logoutFromAmazom();
+    });
     it("add product to cart", () => {
-        cy.fixture("AddCartTestData").then((data) => {
+        //AddCartTestData
+        cy.fixture("TestData").then((data) => {
             homep.enterProductDetailsInSearchBox(data.productname);
             homep.clickOnSearchButton();
             homep.verifySearchResultDisplayed(data.productname);

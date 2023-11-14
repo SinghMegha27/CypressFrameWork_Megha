@@ -12,8 +12,12 @@ describe("Verify Mobile Recharge", () => {
     beforeEach(() => {
         cy.loginToAmazon();
     });
+    afterEach(()=>{
+        cy.logoutFromAmazom();
+    });
     it("Validation of Mobile Recharge Plan", () => {
-        cy.fixture("MobileNumberTestData").then((data) => {
+        //MobileNumberTestData
+        cy.fixture("TestData").then((data) => {
             homep.clickOnAmazonPayLink();
             amazonpayp.verifyAmazonPayImageDisplayed();
             amazonpayp.clickOnMobileRecharge();
@@ -24,6 +28,7 @@ describe("Verify Mobile Recharge", () => {
             mobilerechargep.fetchandchooseplan(data.planprice);
             mobilerechargep.clickOnContinueButton(data.planprice);
             paymentmethodp.verifyPaymentMethodTextDisplayed("Select a payment method");
+            cy.go("back");
         })
 
     })

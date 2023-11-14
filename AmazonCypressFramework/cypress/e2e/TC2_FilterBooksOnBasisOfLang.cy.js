@@ -5,8 +5,12 @@ describe("Verification of book results after applying filter on language", () =>
     beforeEach(() => {
         cy.loginToAmazon();
     });
+    afterEach(()=>{
+        cy.logoutFromAmazom();
+    });
     it("Filter Books on Basis of Language", () => {
-        cy.fixture("BookNameTestData").then((data) => {
+        //BookNameTestData
+        cy.fixture("TestData").then((data) => {
             homep.enterProductDetailsInSearchBox(data.bookname);
             homep.clickOnSearchButton();
             homep.verifySearchResultDisplayed(data.bookname);

@@ -10,19 +10,19 @@ describe("Verification of adding new address", () => {
     beforeEach(() => {
         cy.loginToAmazon();
     });
+    afterEach(()=>{
+        cy.logoutFromAmazom();
+    });
     it("Add New Address", () => {
-        cy.fixture("AddressTestData").then((data) => {
+        //AddressTestData
+        cy.fixture("TestData").then((data) => {
             homep.clickOnSignInButton();
             youraccountp.verifyYourAccountPage("Your Account");
             youraccountp.clickOnYourAdress("Your Addresses");
             youraddressp.verifyYourAddressPage("Your Addresses");
             youraddressp.clickOnAddAdress("Add address");
-            youraddressp.enterFullNameInToFullNameTextBox(data.fullname);
-            youraddressp.enterMobileNumberToMobileNumberTextBox(data.mobilenumber);
-            youraddressp.enterPinCodeToPinCodeTextBox(data.pincode);
-            youraddressp.enterFlatNumberInToFlatNumberTextBox(data.flatnumber);
-            youraddressp.enterStreetNumberIntoStreetNumberTextBox(data.areaname);
-            youraddressp.enterLandMarkInToLandMarkTextBox(data.landmark);
+            youraddressp.enteralladressdetails(data.fullname, data.mobilenumber, 
+                data.pincode, data.flatnumber, data.areaname, data.landmark);
             youraddressp.verifyTownCityIsNotNull();
             youraddressp.clickOnSubmitButton();
             youraddressp.verifyAdressSavedMessage("Address saved");

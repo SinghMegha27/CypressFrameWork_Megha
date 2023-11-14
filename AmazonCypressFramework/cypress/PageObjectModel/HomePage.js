@@ -17,6 +17,7 @@ const selectors = {
         primemembership : "a[href$='nav_AccountFlyout_prime']",
         amazonpay : "a[href$='nav_cs_apay']",
         productlink : "h2>a.a-text-normal",
+        signout : "#nav-item-signout",
     }
 
 }
@@ -66,6 +67,9 @@ class HomePage{
     }
     clickOnAmazonPayLink(){
         cy.get(selectors.link.amazonpay).click();
+    }
+    clickOnSignOutButton(){
+        cy.get(selectors.link.signout).click({force:true});
     }
 }
 
