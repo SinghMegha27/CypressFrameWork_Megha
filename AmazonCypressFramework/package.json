@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node_modules\\.bin\\cypress run",
+    "headTest": "npm run test --headed",
+    "browserTest": "npm run test -- --browser chrome",
+    "run1": "node_modules/.bin/cypress",
+    "dashboard": "npm run test -- --record --key e90d6580-de9e-4d5c-aab8-a0447e78c074"
   },
   "author": "Megha",
   "license": "ISC",
