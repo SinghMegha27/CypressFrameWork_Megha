@@ -44,6 +44,7 @@ class YourAddressPage{
         cy.wait(1000);
         cy.get(selectors.input.mobilenumber).type(number);
         cy.wait(1000);
+        cy.get(selectors.input.pincode).clear();
         cy.get(selectors.input.pincode).type(pin);
         cy.wait(1000);
         cy.get(selectors.input.flatnumber).type(flatnum);
